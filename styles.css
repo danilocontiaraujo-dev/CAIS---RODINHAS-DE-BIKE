@@ -1,0 +1,371 @@
+/* Atrio — estilos dos elementos injetados. Namespace .atrio-* para nunca colidir com classes do ADF. */
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('Nunito_Sans/NunitoSans-VariableFont.ttf') format('truetype');
+}
+
+/* Regra Global: Toda palavra em Caixa Alta */
+.atrio-badge,
+.atrio-top-banner,
+.atrio-inline-msg,
+.atrio-highlight-tcos,
+.atrio-lock-warning,
+.atrio-toast,
+.atrio-balance-badge,
+.atrio-top-bar-item {
+  text-transform: uppercase !important;
+}
+
+/* --- Container do Checklist --- */
+.atrio-left-sidebar {
+  position: fixed;
+  left: 24px;
+  top: 325px;
+  width: 185px;
+  z-index: 9999;
+}
+
+.atrio-checklist {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* --- Header e Barra de Progresso --- */
+.atrio-checklist-header {
+  padding: 10px 10px 0 10px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.atrio-checklist-title-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  color: #212121;
+  white-space: nowrap;
+}
+
+.atrio-checklist-count {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.atrio-progress-bar-bg {
+  width: calc(100% + 24px);
+  margin-left: -12px;
+  height: 6px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.atrio-progress-bar-fill {
+  height: 100%;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+/* Cores da barra de progresso */
+.atrio-progress-red { background-color: #f44336; }
+.atrio-progress-orange { background-color: #ff9800; }
+.atrio-progress-yellow { background-color: #ffc107; }
+.atrio-progress-green { background-color: #4caf50; }
+
+/* --- Itens do Checklist --- */
+.atrio-checklist-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.atrio-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 6px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  background: transparent;
+  transition: background-color 0.2s;
+}
+
+.atrio-checklist-item-last {
+  border-bottom: none;
+}
+
+.atrio-checklist-item:hover {
+  background-color: #fafafa;
+}
+
+.atrio-checklist-item-icon {
+  width: 16px;
+  flex-shrink: 0;
+  margin-right: 6px;
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+}
+
+.atrio-status-icon {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  animation: atrio-pulse 0.3s ease-out;
+}
+
+@keyframes atrio-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+@keyframes atrio-glow {
+  0% { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+  50% { box-shadow: 0 4px 16px rgba(76, 175, 80, 0.6); }
+  100% { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+}
+
+.atrio-checklist-glow {
+  animation: atrio-glow 1s ease-out;
+}
+
+.atrio-status-ok { color: #4caf50; }
+.atrio-status-error { color: #f44336; }
+.atrio-status-warning { color: #ff9800; }
+.atrio-status-none { color: #9e9e9e; }
+
+.atrio-checklist-item-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.atrio-checklist-item-label {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  color: #212121;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.atrio-checklist-item-details {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: normal;
+  font-size: 9px;
+  color: #616161;
+  line-height: 1.3;
+}
+
+
+/* --- Elementos Legados (mantidos para o main screen do Opera) --- */
+.atrio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Nunito Sans", -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: default;
+  z-index: 2147483000;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.atrio-field-error {
+  outline: 2px solid #d93025 !important;
+  outline-offset: 1px;
+  background-color: #fce8e6 !important;
+}
+
+/* Estilos da trava do Check-in */
+.atrio-btn-locked {
+  background-color: #f5f5f5 !important;
+  color: #9e9e9e !important;
+  border: 1px solid #e0e0e0 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Banner de erros do Check-in (Topo) */
+.atrio-top-banner {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fef7e0;
+  border: 1px solid #fce8b2;
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-right: 12px;
+  font-family: "Nunito Sans", -apple-system, sans-serif;
+  color: #3c4043;
+  gap: 12px;
+  vertical-align: middle;
+  max-width: fit-content;
+}
+
+.atrio-banner-header {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #fce8b2;
+  padding-right: 12px;
+}
+
+.atrio-banner-header strong {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #b06000;
+  margin-bottom: 2px;
+}
+
+/* Top Tags Container (Topo da reserva) */
+.atrio-top-tags-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: sticky;
+  top: 60px;
+  z-index: 9999;
+  padding: 10px 0;
+  margin-top: -10px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.atrio-top-bar-item {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  color: #000;
+}
+.atrio-top-bar-item strong { margin-bottom: 2px; color: #000; }
+.atrio-top-bar-item p { margin: 0; font-size: 9px; font-weight: 600; opacity: 0.8; color: #000; font-family: 'Nunito Sans', sans-serif; }
+
+/* Highlight Colors (Marca-texto na tela do Opera) */
+.atrio-bg-orange { background-color: #ffe0b2 !important; color: #000 !important; border: 1px solid #ffb74d !important; border-radius: 3px; }
+.atrio-bg-purple { background-color: #e1bee7 !important; color: #000 !important; border: 1px solid #ba68c8 !important; border-radius: 3px; }
+.atrio-bg-yellow { background-color: #fff9c4 !important; color: #000 !important; border: 1px solid #fff176 !important; border-radius: 3px; }
+.atrio-bg-lime { background-color: #dcedc8 !important; color: #000 !important; border: 1px solid #aed581 !important; border-radius: 3px; }
+.atrio-bg-green { background-color: #c8e6c9 !important; color: #000 !important; border: 1px solid #81c784 !important; border-radius: 3px; }
+.atrio-bg-blue { background-color: #bbdefb !important; color: #000 !important; border: 1px solid #64b5f6 !important; border-radius: 3px; }
+.atrio-bg-darkblue { background-color: #90caf9 !important; color: #000 !important; border: 1px solid #42a5f5 !important; border-radius: 3px; font-weight: bold !important; }
+.atrio-bg-pink { background-color: #f8bbd0 !important; color: #000 !important; border: 1px solid #f06292 !important; border-radius: 3px; }
+.atrio-bg-teal { background-color: #b2dfdb !important; color: #000 !important; border: 1px solid #4db6ac !important; border-radius: 3px; }
+.atrio-bg-gray { background-color: #eeeeee !important; color: #000 !important; border: 1px solid #bdbdbd !important; border-radius: 3px; }
+.atrio-bg-darkgray { background-color: #bdbdbd !important; color: #000 !important; border: 1px solid #9e9e9e !important; border-radius: 3px; }
+.atrio-bg-gold { background-color: #fff8e1 !important; color: #b78c00 !important; border: 1px solid #ffc107 !important; border-radius: 3px; }
+
+.atrio-border-dashed-red {
+  border-bottom: 2px solid #ff3b30 !important;
+  display: inline-block !important;
+  border-radius: 0;
+}
+
+.atrio-underline-gold {
+  box-shadow: 0 3px 0 0 #ffc107 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+.atrio-underline-black {
+  box-shadow: 0 3px 0 0 #000000 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+.atrio-underline-teal {
+  box-shadow: 0 3px 0 0 #4db6ac !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+.atrio-underline-orange {
+  box-shadow: 0 3px 0 0 #ffb74d !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Toast Notifications (ALL Membership e outros) */
+.atrio-toast {
+  position: fixed;
+  bottom: -100px;
+  right: 24px;
+  background-color: #fff;
+  border-left: 4px solid #1a73e8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 16px;
+  border-radius: 4px;
+  z-index: 2147483000;
+  font-family: "Nunito Sans", sans-serif;
+  transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  max-width: 300px;
+}
+
+.atrio-toast.atrio-toast--show {
+  bottom: 24px;
+}
+
+/* --- Botão Check-In: Borda Vermelha com Erro --- */
+.atrio-btn-error-border {
+  border: 2px solid #f44336 !important;
+  border-radius: 4px;
+}
+
+/* --- Botão Check-In: Borda Verde sem Erro --- */
+.atrio-btn-success-border {
+  border: 2px solid #4caf50 !important;
+  border-radius: 4px;
+}
+
+/* --- Tooltip de Erro no Hover do Botão --- */
+.atrio-checkin-tooltip {
+  position: fixed;
+  display: none;
+  background: #d32f2f;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  text-transform: uppercase;
+  z-index: 2147483000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  white-space: nowrap;
+  line-height: 1.4;
+  pointer-events: none; /* Não captura eventos de mouse para não conflitar com o botão */
+}
+
+/* Scrollbar personalizada do checklist */
+.atrio-left-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.atrio-left-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.atrio-left-sidebar::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 2px;
+}
